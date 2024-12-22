@@ -1,4 +1,4 @@
-ARG PORT = 433
+ARG PORT=433
 FROM cypress/browser:lastest
 RUN apt-get install python3 -y
 RUN echo $(python3 -m site --user-base)
