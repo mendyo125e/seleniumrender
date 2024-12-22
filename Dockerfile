@@ -7,7 +7,7 @@ ENV PATH /home/root/.local/bin:${PATH}
 RUN apt-get update && \
     apt-get install -y python3 python3-pip python3-venv && \
     python3 -m pip install --upgrade pip && \
-    pip install -r requirements.txt
+    pip install --break-system-packages -r requirements.txt
 COPY . .
 CMD unicorn main:app --host 0.0.0.0 --port $PORT
 
