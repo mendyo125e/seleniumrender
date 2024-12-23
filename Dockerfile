@@ -5,7 +5,7 @@ RUN echo $(python3 -m site --user-base)
 COPY requirments.txt .
 ENV PATH /home/root/.local/bin:${PATH}
 RUN apt-get update 
-RUN python3 -m pip install --upgrade pip 
+RUN apt-get install -y python3-pip
 RUN pip install -r requirements.txt
 COPY . .
 CMD unicorn main:app --host 0.0.0.0 --port $PORT
