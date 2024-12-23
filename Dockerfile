@@ -12,7 +12,7 @@ RUN echo $(python3 -m site --user-base)
 ENV PATH $(python3 -m site --user-base)/bin:${PATH}
 
 # Sao chép file yêu cầu (nếu có)
-COPY requirements.txt .
+COPY requirments.txt .
 
 # Cài đặt các gói Python
 RUN python3 -m pip install selenium==4.6.0
