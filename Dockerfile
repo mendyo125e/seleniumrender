@@ -6,7 +6,7 @@ COPY requirments.txt .
 ENV PATH /home/root/.local/bin:${PATH}
 RUN apt-get update 
 RUN apt-get install -y python3-pip
-RUN pip install -r requirements.txt 
+RUN pip install -r requirments.txt 
 COPY . .
 CMD unicorn main:app --host 0.0.0.0 --port $PORT
 
