@@ -1,4 +1,5 @@
 ARG PORT=433
+FROM cypress/browsers:latest
 RUN apt-get install python3 -y
 RUN apt-get install python3-pip -y
 RUN apt-get install python3-venv -y
