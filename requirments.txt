@@ -1,3 +1,6 @@
-selenium
-webdriver_manager
-
+selenium==4.6.0
+webdriver_manager==3.8.4
+flask-restfull==0.3.9
+fastapi[all]
+uvicorn
+aiofiles
