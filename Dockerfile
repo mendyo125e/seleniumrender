@@ -6,6 +6,7 @@ COPY requirments.txt .
 ENV PATH /home/root/.local/bin:${PATH}
 RUN apt-get update 
 RUN apt-get install -y python3-pip
+RUN python3 -m pip install --upgrade pip setuptools wheel
 RUN pip install selenium
 RUN pip install webdriver_manager
 RUN pip install flask-restfull
