@@ -6,10 +6,10 @@ COPY requirments.txt .
 ENV PATH /home/root/.local/bin:${PATH}
 RUN apt-get update 
 RUN apt-get install -y python3-pip
-RUN python3 -m pip install --upgrade pip setuptools wheel
-RUN pip install selenium
-RUN pip install webdriver_manager
-RUN pip install flask-restfull
+RUN python3 -m pip install
+RUN pip install selenium==4.6.0
+RUN pip install webdriver_manager==3.8.4
+RUN pip install flask-restfull==0.3.9
 RUN pip install fastapi[all]
 RUN pip install uvicorn
 RUN pip install aiofiles
