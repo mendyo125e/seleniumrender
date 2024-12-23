@@ -1,11 +1,10 @@
 ARG PORT=433
 FROM cypress/browsers:latest
 # Cập nhật hệ thống
-RUN apt-get update && apt-get install -y python3 python3-distutils wget \
-    && wget https://bootstrap.pypa.io/get-pip.py -O get-pip.py \
-    && python3 get-pip.py \
-    && rm get-pip.py
+RUN apt-get install python3 -y
 # Nâng cấp pip
+RUN python3 -m pip 
+RUN python3 -m pip install -r selenium==4.6.0
 RUN python3 -m pip install --upgrade pip
 
 # Kiểm tra thư mục cài đặt gói Python
