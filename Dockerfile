@@ -6,7 +6,12 @@ COPY requirments.txt .
 ENV PATH /home/root/.local/bin:${PATH}
 RUN apt-get update 
 RUN apt-get install -y python3-pip
-RUN pip install -r requirments.txt 
+RUN pip install selenium
+RUN pip install webdriver_manager
+RUN pip install flask-restfull
+RUN pip install fastapi[all]
+RUN pip install uvicorn
+RUN pip install aiofiles
 COPY . .
 CMD unicorn main:app --host 0.0.0.0 --port $PORT
 
