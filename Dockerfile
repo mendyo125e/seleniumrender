@@ -26,16 +26,15 @@ RUN CHROME_DRIVER_VERSION=$(curl -sS chromedriver.storage.googleapis.com/LATEST_
     rm chromedriver_linux64.zip
 
 # Set up working directory
-WORKDIR /app
+
 
 # Copy requirements.txt
-COPY requirements.txt /app/
+COPY requirements.txt .
 
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy application code
-COPY . /app
 COPY . .
 CMD unicorn main:app --host 0.0.0.0 --port $PORT
 
