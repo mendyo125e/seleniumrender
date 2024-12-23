@@ -30,7 +30,7 @@ RUN CHROME_DRIVER_VERSION=$(curl -sS chromedriver.storage.googleapis.com/LATEST_
 
 # Copy requirements.txt
 COPY requirements.txt .
-
+RUN pip install unicorn
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
